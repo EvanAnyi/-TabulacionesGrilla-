@@ -1,0 +1,196 @@
+body {
+	background-image: url('../../assets/img/fondo.jpg');
+	background-size: cover;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-hidden {
+	display: none;
+}
+
+.form-visible {
+	display: block;
+}
+
+.container {
+	width: 900px;
+	height: 1000px;
+	background-color: rgb(190, 190, 209);
+	border-radius: 10px;
+	position: relative;
+	margin: 8% auto;
+	overflow: hidden;
+}
+
+h3 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.container form {
+	width: 600px;
+	position: relative;
+	left: 70px;
+	transition: 1s;
+}
+
+form input {
+	width: 100%;
+	padding: 5% 5px;
+	margin: 10px 0;
+	border: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+}
+
+.btn-box {
+	width: 100%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+form button {
+	width: 110px;
+	height: 35px;
+	border-radius: 50px;
+	margin: 0 10px;
+	background: linear-gradient(to right, #DFA3FF, #B429FF);
+	color: white;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+}
+
+.form-step {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+
+.form-step.active {
+	display: block;
+}
+
+.step-row {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 -1px 5px -1px rgb(59, 28, 28);
+	position: relative;
+}
+
+.step-col {
+	flex: 1;
+	text-align: center;
+	position: relative;
+	width: calc(100% / 13); /* Ajusta según el número de pasos */
+}
+
+#progress {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: linear-gradient(to right, #DFA3FF, #BA29FF);
+	transition: left 1s;
+}
+
+#progress::after {
+	content: '';
+	height: 0;
+	width: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	position: absolute;
+	right: -20px;
+	top: 0;
+}
+
+#progress-bar {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 16px;
+	background-color: #68da3e;
+	width: 0;
+	transition: width 0.3s ease;
+}
+
+/* Estilo opcional para los números de los pasos */
+.step-col small {
+	font-size: 15px;
+    color: #333;
+    position: absolute;
+    bottom: -20px; /* Ajusta según la posición deseada */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50x;
+}
+
+.checkbox-custom {
+	width: 16px;
+	height: 16px;
+	background-color: #c501e2;
+	border-radius: 3px;
+	margin-left: 10px;
+	display: inline-block;
+	position: relative; /* Agregado para establecer el contexto de posición */
+}
+
+.checkbox-custom input {
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute; /* Agregado para ocultar el checkbox nativo */
+	top: 0;
+	left: 0;
+	cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+}
+
+.checkbox-custom input:checked + .checkmark::before {
+	content: '\2713'; /* Carácter Unicode para la marca de verificación */
+	color: #6d1111;
+	font-size: 12px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.checkbox-custom .checkmark {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 12px;
+	color: #6d1111;
+}
+
+.number-input-custom {
+	width: 60px; /* Ajusta el ancho según tu preferencia */
+	position: relative;
+	margin-left: 10px;
+}
+
+.number-input-custom input {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	outline: none;
+}
